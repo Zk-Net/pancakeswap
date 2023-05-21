@@ -6,6 +6,7 @@ export enum ChainId {
   GOERLI = 5,
   BSC = 56,
   BSC_TESTNET = 97,
+  ZKNET = 1001,
 }
 
 export const ZERO_PERCENT = new Percent('0')
@@ -20,6 +21,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.GOERLI]: FACTORY_ADDRESS_ETH,
   [ChainId.BSC]: FACTORY_ADDRESS,
   [ChainId.BSC_TESTNET]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
+  [ChainId.ZKNET]: '0x90Ba6e34682124Cf7934A431c8c561232A3268b3',
 }
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
@@ -29,6 +31,7 @@ export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.GOERLI]: INIT_CODE_HASH_ETH,
   [ChainId.BSC]: INIT_CODE_HASH,
   [ChainId.BSC_TESTNET]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
+  [ChainId.ZKNET]: '0x8b7367cba98f548d87fab84a4603b137fc1db47f9acc64d56a5f4e751ff8c809',
 }
 
 export const WETH9 = {
@@ -43,6 +46,14 @@ export const WETH9 = {
   [ChainId.GOERLI]: new ERC20Token(
     ChainId.GOERLI,
     '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6',
+    18,
+    'WETH',
+    'Wrapped Ether',
+    'https://weth.io'
+  ),
+  [ChainId.ZKNET]: new ERC20Token(
+    ChainId.ZKNET,
+    '0xFd06E4269a1D9Bde43A7EeDd275Bbd28c6A766ef',
     18,
     'WETH',
     'Wrapped Ether',
@@ -75,6 +86,14 @@ export const WBNB = {
     'Wrapped BNB',
     'https://www.binance.org'
   ),
+  [ChainId.ZKNET]: new ERC20Token(
+    ChainId.ZKNET,
+    '0x5f8969610A32F257FCB1771A3AA0b6A0F5E6E257',
+    18,
+    'WBNB',
+    'Wrapped BNB',
+    'https://www.binance.org'
+  ),
 }
 
 export const WNATIVE: Record<number, ERC20Token> = {
@@ -82,6 +101,7 @@ export const WNATIVE: Record<number, ERC20Token> = {
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
+  [ChainId.ZKNET]: WETH9[ChainId.ZKNET],
 }
 
 export const NATIVE: Record<
@@ -104,4 +124,5 @@ export const NATIVE: Record<
     symbol: 'tBNB',
     decimals: 18,
   },
+  [ChainId.ZKNET]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
 }

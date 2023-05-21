@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-shadow */
+/* eslint-disable no-return-assign */
 import invariant from 'tiny-invariant'
 import { Token, Currency, Price } from '@pancakeswap/swap-sdk-core'
 
@@ -5,13 +7,16 @@ import { Pair } from './pair'
 
 export class Route<TInput extends Currency, TOutput extends Currency> {
   public readonly pairs: Pair[]
+
   public readonly path: Token[]
+
   public readonly input: TInput
+
   public readonly output: TOutput
 
   public constructor(pairs: Pair[], input: TInput, output: TOutput) {
     invariant(pairs.length > 0, 'PAIRS')
-    const chainId: number = pairs[0].chainId
+    const {chainId} = pairs[0]
     invariant(
       pairs.every((pair) => pair.chainId === chainId),
       'CHAIN_IDS'

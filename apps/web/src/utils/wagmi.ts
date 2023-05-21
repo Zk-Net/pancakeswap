@@ -12,7 +12,32 @@ import { LedgerConnector } from 'wagmi/connectors/ledger'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from './safeConnector'
 
-const CHAINS = [bsc, mainnet, bscTestnet, goerli]
+
+const zknet = {
+  id: 1001,
+  name: 'ZkNet',
+  network: 'zknet',
+  nativeCurrency: {
+    name: 'Ether',
+    symbol: 'ETH',
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://rpc.alishdahal.com.np'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      url: 'https://explorer.alishdahal.com.np',
+      name: 'Explorer',
+      key: 'explorer',
+    },
+  },
+  testnet: false,
+}
+
+const CHAINS = [bsc, mainnet, bscTestnet, goerli, zknet]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null

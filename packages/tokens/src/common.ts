@@ -70,6 +70,15 @@ export const USDT_ETH = new ERC20Token(
   'https://tether.to/',
 )
 
+export const USDT_ZKNET = new ERC20Token(
+  ChainId.ZKNET,
+  '0x056b087f4b8d565C273177d6D5A721a71e127955',
+  6,
+  'USDT',
+  'Tether USD',
+  'https://tether.to/',
+)
+
 export const BUSD_BSC = new ERC20Token(
   ChainId.BSC,
   '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
@@ -106,11 +115,21 @@ export const BUSD_GOERLI = new ERC20Token(
   'https://www.paxos.com/busd/',
 )
 
+export const BUSD_ZKNET = new ERC20Token(
+  ChainId.ZKNET,
+  '0xe182910cC5f0b2E27F110af3A729915921a493b0',
+  18,
+  'BUSD',
+  'Binance USD',
+  'https://www.paxos.com/busd/',
+)
+
 export const BUSD: Record<ChainId, ERC20Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,
   [ChainId.GOERLI]: BUSD_GOERLI,
   [ChainId.BSC]: BUSD_BSC,
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
+  [ChainId.ZKNET]: BUSD_ZKNET,
 }
 
 export const CAKE = {
@@ -128,6 +147,7 @@ export const USDC = {
 export const USDT = {
   [ChainId.BSC]: USDT_BSC,
   [ChainId.ETHEREUM]: USDT_ETH,
+  [ChainId.ZKNET]: USDT_ZKNET,
 }
 
 export const WBTC_ETH = new ERC20Token(
