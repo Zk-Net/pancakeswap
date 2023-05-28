@@ -24,12 +24,12 @@ const zknet = {
   },
   rpcUrls: {
     default: {
-      http: ['https://rpc.alishdahal.com.np'],
+      http: ['https://rpc-zknet.zebec.io'],
     },
   },
   blockExplorers: {
     default: {
-      url: 'https://explorer.alishdahal.com.np',
+      url: 'https://explorer-zknet.zebec.io',
       name: 'Explorer',
       key: 'explorer',
     },
